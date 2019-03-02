@@ -23,7 +23,6 @@ def image_upload_url(recipe_id):
     return reverse('recipe:recipe-upload-image', args=[recipe_id])
 
 
-
 def detail_url(recipe_id):
     # Return recipe detail URL.
     return reverse('recipe:recipe-detail', args=[recipe_id])
@@ -208,12 +207,13 @@ class PrivateRecipeApiTests(TestCase):
         tags = recipe.tags.all()
         self.assertEqual(len(tags), 0)
 
+
 class RecipeImageUploadTests(TestCase):
 
     def setUp(self):
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
-            'dave@simpoll.org', 
+            'dave@simpoll.org',
             'testpass'
         )
         self.client.force_authenticate(self.user)
