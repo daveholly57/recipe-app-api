@@ -258,9 +258,9 @@ class RecipeImageUploadTests(TestCase):
             {'tags': '{},{}'.format(tag1.id, tag2.id)}
         )
 
-        serializer1 = RecipeDetailSerializer(recipe1)
-        serializer2 = RecipeDetailSerializer(recipe2)
-        serializer3 = RecipeDetailSerializer(recipe3)
+        serializer1 = RecipeSerializer(recipe1)
+        serializer2 = RecipeSerializer(recipe2)
+        serializer3 = RecipeSerializer(recipe3)
 
         print('serializer1: ')
         print(serializer1.data)
@@ -286,9 +286,9 @@ class RecipeImageUploadTests(TestCase):
             {'ingredients': '{},{}'.format(ingredient1.id, ingredient2.id)}
         )
 
-        serializer1 = RecipeDetailSerializer(recipe1)
-        serializer2 = RecipeDetailSerializer(recipe2)
-        serializer3 = RecipeDetailSerializer(recipe3)
+        serializer1 = RecipeSerializer(recipe1)
+        serializer2 = RecipeSerializer(recipe2)
+        serializer3 = RecipeSerializer(recipe3)
         self.assertIn(serializer1.data, res.data)
         self.assertIn(serializer2.data, res.data)
         self.assertNotIn(serializer3.data, res.data)
