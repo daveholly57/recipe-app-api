@@ -262,11 +262,6 @@ class RecipeImageUploadTests(TestCase):
         serializer2 = RecipeSerializer(recipe2)
         serializer3 = RecipeSerializer(recipe3)
 
-        print('serializer1: ')
-        print(serializer1.data)
-        print('res.data:')
-        print(res.data)
-
         self.assertIn(serializer1.data, res.data)
         self.assertIn(serializer2.data, res.data)
         self.assertNotIn(serializer3.data, res.data)
